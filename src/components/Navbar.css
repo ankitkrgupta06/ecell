@@ -1,3 +1,4 @@
+/*navbar*/
 .navbar {
   position: fixed;
   top: 0;
@@ -5,7 +6,7 @@
   width: 100%;
   z-index: 1000;
 
-  background: rgba(10, 10, 10, 0.72);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
@@ -13,6 +14,7 @@
 }
 
 .navbar-container {
+  width: 100%;
   max-width: 1400px;
   height: 78px;
   margin: 0 auto;
@@ -21,44 +23,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-.ecell-logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  display: block;
-}
-
+/*logo*/
 .navbar-logo {
   display: flex;
   align-items: center;
   gap: 11px;
+  flex-shrink: 0;
 
+  color: #fff;
   text-decoration: none;
-  color: white;
 }
 
-.logo-mark {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-
-  background: rgba(255, 255, 255, 0.08);
+.ecell-logo {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .logo-text {
@@ -74,17 +58,13 @@
 
 .logo-subtitle {
   margin-top: 2px;
-
   font-size: 8px;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-
   opacity: 0.55;
 }
 
-/* =========================
-   DESKTOP NAV
-========================= */
+/* desktop navigation */
 
 .nav-links {
   display: flex;
@@ -94,34 +74,27 @@
 
 .nav-link {
   position: relative;
+  padding: 9px 12px;
 
-  padding: 9px 14px;
-
-  color: rgba(255, 255, 255, 0.62);
-
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
 
   font-size: 14px;
   font-weight: 500;
 
-  transition:
-    color 0.25s ease,
-    background 0.25s ease;
+  white-space: nowrap;
+
+  transition: color 0.25s ease, background 0.25s ease;
 }
 
-.nav-link:hover {
-  color: white;
-}
-
+.nav-link:hover,
 .nav-link.active {
-  color: white;
+  color: #fff;
 }
 
 .nav-link.active::after {
   content: "";
-
   position: absolute;
-
   left: 50%;
   bottom: 1px;
 
@@ -129,79 +102,77 @@
   height: 4px;
 
   transform: translateX(-50%);
-
   border-radius: 50%;
-
-  background: white;
+  background: #fff;
 }
 
-/* =========================
-   CTA
-========================= */
+/* Desktop CTA */
 
 .nav-cta {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 7px;
 
   padding: 11px 17px;
 
   color: #0b0b0b;
-  background: white;
-
+  background: #fff;
   text-decoration: none;
 
   border-radius: 30px;
 
   font-size: 13px;
   font-weight: 650;
+  white-space: nowrap;
+  flex-shrink: 0;
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .nav-cta:hover {
   transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 30px rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12);
 }
 
-/* =========================
-   MOBILE BUTTON
-========================= */
+/* Mobile Button */
 
 .menu-button {
   display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 
-  border: none;
-  background: transparent;
-
-  color: white;
-
-  cursor: pointer;
+  width: 44px;
+  height: 44px;
 
   padding: 7px;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+
+  cursor: pointer;
 }
 
-/* =========================
-   MOBILE MENU
-========================= */
+.menu-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile Menu */
 
 .mobile-menu {
   display: none;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* Tablet and Mobile */
 
 @media (max-width: 900px) {
-
   .navbar-container {
     height: 70px;
     padding: 0 20px;
+    gap: 12px;
   }
 
   .nav-links,
@@ -211,50 +182,47 @@
 
   .menu-button {
     display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .mobile-menu {
     display: flex;
-
     flex-direction: column;
-
     gap: 5px;
 
-    padding: 10px 20px 25px;
+    width: 100%;
+    padding: 0 20px;
 
-    background: rgba(10, 10, 10, 0.96);
-
+    background: rgba(10, 10, 10, 0.98);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 
-    transform: translateY(-10px);
-
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
     opacity: 0;
-    pointer-events: none;
 
     transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
+      max-height 0.3s ease,
+      opacity 0.25s ease,
+      padding 0.3s ease,
+      visibility 0.3s ease;
   }
 
   .mobile-menu.open {
-    transform: translateY(0);
+    max-height: 450px;
+    padding: 10px 20px 24px;
 
+    visibility: visible;
     opacity: 1;
-
-    pointer-events: auto;
   }
 
   .mobile-nav-link {
+    display: block;
     padding: 14px 12px;
 
     color: rgba(255, 255, 255, 0.65);
-
     text-decoration: none;
 
     font-size: 15px;
-
     border-radius: 8px;
 
     transition:
@@ -264,14 +232,12 @@
 
   .mobile-nav-link:hover,
   .mobile-nav-link.active {
-    color: white;
-
+    color: #fff;
     background: rgba(255, 255, 255, 0.06);
   }
 
   .mobile-cta {
     margin-top: 8px;
-
     padding: 13px;
 
     display: flex;
@@ -280,9 +246,7 @@
     gap: 6px;
 
     color: #0b0b0b;
-
-    background: white;
-
+    background: #fff;
     text-decoration: none;
 
     border-radius: 8px;
@@ -292,7 +256,21 @@
   }
 }
 
+/* Small Mobile */
+
 @media (max-width: 450px) {
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .ecell-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navbar-logo {
+    gap: 9px;
+  }
 
   .logo-subtitle {
     display: none;
@@ -302,8 +280,27 @@
     font-size: 15px;
   }
 
-  .logo-mark {
-    width: 38px;
-    height: 38px;
+  .menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .mobile-menu {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .mobile-menu.open {
+    padding: 10px 16px 20px;
+  }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .nav-link,
+  .nav-cta {
+    transition: none;
   }
 }

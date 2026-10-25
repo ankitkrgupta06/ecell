@@ -20,8 +20,9 @@ export const team = [
   { name: "Yashwardhan Rai", role: "Co-Secretary", image: "https://ik.imagekit.io/wqjrpg5jxg/E-Cell/Leads/yash.jpeg" },
   { name: "Hardik Agarwal", role: "Design Lead", image: "https://ik.imagekit.io/wqjrpg5jxg/E-Cell/Leads/hardik.jpeg" },
   { name: "Riya Roy", role: "PR Lead", image: "https://ik.imagekit.io/wqjrpg5jxg/E-Cell/Leads/riya.jpeg" },
-  { name: "Ankit Kumar Gupta", role: "Technical Lead", image: "https://ik.imagekit.io/wqjrpg5jxg/E-Cell/Leads/ankit.jpeg" },
   { name: "Pranav Raj", role: "Event Lead", image: "https://ik.imagekit.io/wqjrpg5jxg/E-Cell/Leads/pranav.jpeg" },
+  { name: "Ankit Kumar Gupta", role: "Technical Lead", image: "https://ik.imagekit.io/wqjrpg5jxg/E-Cell/Leads/ankit..jpeg" },
+  
 ];
 
 export const gallery = [
